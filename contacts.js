@@ -2,10 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 import { nanoid } from "nanoid";
 
-//Розкоментуй і запиши значення
 const contactsPath = path.resolve("db", "contacts.json");
 
-// get all contacts from db
 export async function listContacts() {
   const listOfContacts = await fs.readFile(contactsPath);
   return JSON.parse(listOfContacts);
